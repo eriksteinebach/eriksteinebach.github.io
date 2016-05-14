@@ -3,18 +3,18 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Erik Steinebach</title>
-    <link>http://eriksteinebach.nl/</link>
+    <title>NET, DevOps, Architecture, Azure, Erik Steinebach</title>
+    <link>http://eriksteinebach.com/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
-    <description></description>
+    <description>Erik Steinebach&#39;s personal website and blog, contact him for more information.</description>
     <pubDate>Sat, 14 May 2016 20:07:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>The difference between implementing DevOps in small and big teams</title>
-      <link>http://eriksteinebach.nl/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/</link>
-      <guid>http://eriksteinebach.nl/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/</guid>
+      <link>http://eriksteinebach.com/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/</link>
+      <guid>http://eriksteinebach.com/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/</guid>
       <pubDate>Sun, 23 Nov 2014 18:50:30 GMT</pubDate>
       <description>
       
@@ -34,13 +34,13 @@
 &lt;p&gt;Although the way of implementing DevOps might be different, the result should be the same. The result should be an more efficient way of releasing software. This doesn’t mean that the developer “will be killed”, but DevOps makes sure they do a better job, be more efficient and have a clearer understanding of their environment. DevOps makes a developer more professional.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://eriksteinebach.nl/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/#disqus_thread</comments>
+      <comments>http://eriksteinebach.com/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Introducing Continuous Delivery and DevOps in a company</title>
-      <link>http://eriksteinebach.nl/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</link>
-      <guid>http://eriksteinebach.nl/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</guid>
+      <link>http://eriksteinebach.com/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</link>
+      <guid>http://eriksteinebach.com/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</guid>
       <pubDate>Sat, 23 Aug 2014 18:49:17 GMT</pubDate>
       <description>
       
@@ -59,13 +59,13 @@
 &lt;p&gt;In future posts I will go into more detail about parts mentioned in this blog post.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://eriksteinebach.nl/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/#disqus_thread</comments>
+      <comments>http://eriksteinebach.com/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/#disqus_thread</comments>
     </item>
     
     <item>
       <title>How to explain Continuous Delivery to backpackers</title>
-      <link>http://eriksteinebach.nl/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/</link>
-      <guid>http://eriksteinebach.nl/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/</guid>
+      <link>http://eriksteinebach.com/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/</link>
+      <guid>http://eriksteinebach.com/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/</guid>
       <pubDate>Wed, 06 Aug 2014 18:47:44 GMT</pubDate>
       <description>
       
@@ -82,7 +82,7 @@
 &lt;p&gt;This is my first blogpost about Continuous Delivery. My goal is to go deeper into different aspects of Continuous Delivery and DevOps, because I believe they are an integral part of the future of software development.&lt;/p&gt;
 </content:encoded>
       
-      <comments>http://eriksteinebach.nl/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/#disqus_thread</comments>
+      <comments>http://eriksteinebach.com/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/#disqus_thread</comments>
     </item>
     
   </channel>
