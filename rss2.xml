@@ -8,8 +8,29 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Erik Steinebach&#39;s personal website and blog, contact him for more information.</description>
-    <pubDate>Sat, 14 May 2016 20:07:05 GMT</pubDate>
+    <pubDate>Sun, 15 May 2016 00:39:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Blog reboot and changes</title>
+      <link>http://eriksteinebach.com/2016/05/14/blog-reboot-and-changes/</link>
+      <guid>http://eriksteinebach.com/2016/05/14/blog-reboot-and-changes/</guid>
+      <pubDate>Sun, 15 May 2016 00:36:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;A new blogpost! Maybe you do not remember, but you subscribed to my blog. Don’t worry, it is totally possible you do not remember, becaus
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;A new blogpost! Maybe you do not remember, but you subscribed to my blog. Don’t worry, it is totally possible you do not remember, because my last post was almost 2 years ago. I was hoping to be able to blog while I was traveling, but it turned out I was to busy with discovering the world (for more info see &lt;a href=&quot;http://eriksteinebach.nl&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eriksteinebach.nl&lt;/a&gt; to do so. Now that I settled back down in Lima (Peru) for the time being, I want to reboot this blog. This means there will be new blogpost, a new design and that means a new blog system.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;change-1245949_640.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The new content will be a bit more broad then before. Until now I focused on DevOps, but I am originally a .NET developer and I am going back to my roots (or I will preferably do both). So expect more technical content as well on this blog. One of the first things I will post soon is about handling Time when deploying to Azure. It will always be bigger picture stuff.&lt;/p&gt;
+&lt;p&gt;For those who are following me via RSS, the URL will change. The new RSS url will be &lt;a href=&quot;http://eriksteinebach.com/rss2.xml&quot;&gt;http://eriksteinebach.com/rss2.xml&lt;/a&gt;, but because this one is not yet available you can subscribe now to: &lt;a href=&quot;http://eriksteinebach.github.io/rss2.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eriksteinebach.github.io/rss2.xml&lt;/a&gt;. This one will be active even after I change &lt;a href=&quot;http://eriksteinebach.com&quot;&gt;eriksteinebach.com&lt;/a&gt; to the new blog. So if you want a preview of the new blog, you can look at &lt;a href=&quot;http://eriksteinebach.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://eriksteinebach.github.io/&lt;/a&gt;, but it is still in development.&lt;/p&gt;
+&lt;p&gt;As I am working as a freelancer, and bills have to be paid I am looking for new clients. If you are interested in working with me, please contact me to discus it further.&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://eriksteinebach.com/2016/05/14/blog-reboot-and-changes/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>The difference between implementing DevOps in small and big teams</title>
