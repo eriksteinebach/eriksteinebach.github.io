@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Creating charts with d3.js and ASP.NET MVC | NET, DevOps, Architecture, Azure, Erik Steinebach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Javascript,D3.js,Charts,Graphs,Linechart,Barchart,ASP.NET" />
+    
+    <meta name="description" content="For a recent project I needed to create a line chart and a bar chart. Previously I used the ASP.NET chart controls, but in the new ASP.NET Core the chart control is not available anymore, so I went lo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating charts with d3.js and ASP.NET MVC">
+<meta property="og:url" content="http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/index.html">
+<meta property="og:site_name" content="NET, DevOps, Architecture, Azure, Erik Steinebach">
+<meta property="og:description" content="For a recent project I needed to create a line chart and a bar chart. Previously I used the ASP.NET chart controls, but in the new ASP.NET Core the chart control is not available anymore, so I went lo">
+<meta property="og:image" content="http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/chart.JPG">
+<meta property="og:updated_time" content="2016-05-25T17:15:04.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Creating charts with d3.js and ASP.NET MVC">
+<meta name="twitter:description" content="For a recent project I needed to create a line chart and a bar chart. Previously I used the ASP.NET chart controls, but in the new ASP.NET Core the chart control is not available anymore, so I went lo">
+<meta name="twitter:image" content="http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/chart.JPG">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-30164253-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Erik Steinebach</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Coding/">Coding</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/DevOps/">DevOps</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/">About</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="http://www.eriksteinebach.nl">Travel</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Coding/">Coding</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Creating-charts-with-d3js-and-ASPNET-MVC" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Creating charts with d3.js and ASP.NET MVC
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/" class="article-date">
+    <time datetime="2016-05-25T13:24:47.000Z" itemprop="datePublished">2016-05-25</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Barchart/">Barchart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charts/">Charts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/D3-js/">D3.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graphs/">Graphs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linechart/">Linechart</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>For a recent project I needed to create a line chart and a bar chart. Previously I used the ASP.NET chart controls, but in the new ASP.NET Core the chart control is not available anymore, so I went looking for something new. Because of the many single page applications build in javascript these days I figured a javascript based solution would be the best investment for the future. With client computers and browsers being fast enough, there really is no need anymore to generate charts on the server.  After some research I choose <a href="https://d3js.org/" target="_blank" rel="external">D3.js</a>.</p>
+<blockquote>
+<p>“D3.js is a javascript library for producing dynamic, interactive data visualizations in web browsers. It makes use of the widely implemented SVG, HTML5, and CSS standards. It is the successor to the earlier Protovis framework.” - Wikipedia</p>
+</blockquote>
+<p>D3.js is a highly flexible and powerful library to build a variety of different data visualizations. But the downside of being so powerful is that it is not so easy to understand at first. That is why I wanted to make this blog post. I am going to assume you are a developer like me, so you have knowledge of HTML, CSS, Javascript and for the .NET parts also knowledge of ASP.NET. I will walk you through creating a bar chart and a line chart. And will explain how to get the data for your chart from the server. After that you should have a basic understanding of D3.js, to also be able to build other visualizations. See other visualizations <a href="https://github.com/d3/d3/wiki/Gallery" target="_blank" rel="external">here</a>. </p>
+<h3 id="How-to-make-a-bar-chart"><a href="#How-to-make-a-bar-chart" class="headerlink" title="How to make a bar chart"></a>How to make a bar chart</h3><p>To build a chart we start with a basic page, with the d3.js reference and a <a href="http://www.w3schools.com/html/html5_svg.asp" target="_blank" rel="external">SVG</a> (Scalable Vector Graphics) element. This SVG is used to draw the chart. With javascript we give the SVG a width and height and we store those in a variable, because we will need those later. We also have a set of data that we can use to draw. Later we will take the data from a JSON call.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://d3js.org/d3.v3.min.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">id</span>=<span class="string">"barChart"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span><br><span class="line">var data = [ 50,90,30,10,70,20];</span><br><span class="line"></span><br><span class="line">var w = 500;</span><br><span class="line">var h = 100;</span><br><span class="line"></span><br><span class="line">var svg = d3.select("#barChart")</span><br><span class="line">            .attr("width", w)</span><br><span class="line">            .attr("height", h);</span><br><span class="line"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>That is the basic setup, we continue with drawing the bars:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svg.selectAll(<span class="string">"rect"</span>)</span><br><span class="line">    .data(data)</span><br><span class="line">    .enter()</span><br></pre></td></tr></table></figure>This takes the data and for every item in the array (basic number or complex type) makes a rectangle. After the enter() function every other chained function is called for every rectangle. Because every rectangle needs an x and y (start position coordinate) and a width and height we will add those like this:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"x"</span>, <span class="number">0</span>)</span><br><span class="line">.attr(<span class="string">"y"</span>, <span class="number">0</span>)</span><br><span class="line">.attr(<span class="string">"width"</span>, <span class="number">20</span>)</span><br><span class="line">.attr(<span class="string">"height"</span>, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>But this only gives us what looks like 1 rectangle (it are actually 6 rectangles on top of each other), because the values obviously are bar specific. First we change the x for every rectangle:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i * <span class="number">21</span>;  <span class="comment">//Bar width of 20 plus 1 for padding</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>This moves every bar next to the previous bar (the bars are 20 pixels wide, plus 1 pixel padding inbetween). Then we change the height so it has the height of the value:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> .attr(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> d;  <span class="comment">//Just the data value</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>But now the bar is upside down, so we correct the y to start so all the bars line out on the bottom:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> h - d;  <span class="comment">//Height minus data value</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>Here is what we have so far, you can play with the javascript to see what happens with the bars:<a class="jsbin-embed" href="http://jsbin.com/wubufu/5/embed?html,output" target="_blank" rel="external">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script><br>I added some color to the chart with the fill attribute, just to make it a little nicer. You can use javascript or CSS to style your chart (later you will see a css example).</p>
+<p>The example is nice, but this only works because the data matches the pixels of the chart. What if they don’t, because that is like.. always? Well then you use <a href="https://github.com/d3/d3/wiki/Quantitative-Scales" target="_blank" rel="external">scales</a>, a functions to map from an input domain to an output range. To be able to show a full bar chart we make the data a bit more complex:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [ &#123;  Product: <span class="string">"Shoes"</span>, Count: <span class="number">5</span>   &#125;,</span><br><span class="line">      &#123;  Product: <span class="string">"Shirts"</span>,  Count: <span class="number">9</span>  &#125;,</span><br><span class="line">      &#123;  Product: <span class="string">"Pants"</span>,  Count: <span class="number">3</span>   &#125;,</span><br><span class="line">      &#123;  Product: <span class="string">"Ties"</span>,  Count: <span class="number">1</span>  &#125;,</span><br><span class="line">      &#123; Product: <span class="string">"Socks"</span>,  Count: <span class="number">7</span>  &#125;,</span><br><span class="line">      &#123;  Product: <span class="string">"Jackets"</span>,  Count: <span class="number">2</span>  &#125;];</span><br></pre></td></tr></table></figure>Probably a more realistic dataset.</p>
+<p>So we make scales, an ordinal scale (<a href="https://github.com/d3/d3/wiki/Ordinal-Scales#ordinal_rangeBands" target="_blank" rel="external">more info here</a>) for the bars, and a linear scale for the height of the bars:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//An ordinal scale, to support the bars, we choose </span></span><br><span class="line"><span class="keyword">var</span> x = d3.scale.ordinal()</span><br><span class="line">    .rangeRoundBands([width, <span class="number">0</span>], <span class="number">0.1</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//I think this makes a lot of sense (just a default scale converter)</span></span><br><span class="line"><span class="keyword">var</span> y = d3.scale.linear()</span><br><span class="line">    .range([<span class="number">0</span>, height]); </span><br></pre></td></tr></table></figure>And we add the “mapping”, the domain:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//The x domain is a map of all the Products names</span></span><br><span class="line">x.domain(data.map(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;  <span class="keyword">return</span> d.Product; &#125;));</span><br><span class="line"><span class="comment">//The y domain is a range from the maximal (Count) value in the array until 0</span></span><br><span class="line">y.domain([d3.max(data, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.Count;  &#125;), <span class="number">0</span>]);</span><br></pre></td></tr></table></figure>Then we can use that information to set the right x,y,width,height info for the bars. You use x() and y() functions for that. The rangeBand function is to help set the width for the bars:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//the x function, transforms the value, based on the scale</span></span><br><span class="line">    <span class="keyword">return</span> x(d.Product); </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//The rangeBand() function returns the width of the bars</span></span><br><span class="line">.attr(<span class="string">"width"</span>, x.rangeBand()) </span><br><span class="line">.attr(<span class="string">"y"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> y(d.Count); <span class="comment">//the y function does the same</span></span><br><span class="line">&#125;)</span><br><span class="line">.attr(<span class="string">"height"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> height - y(d.Count);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>Now you have a fully working bar chart (with correct scaling):<br><a class="jsbin-embed" href="http://jsbin.com/kixaqa/8/embed?html,output" target="_blank" rel="external">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script><br>This is a nice start, but I think most people would like to add some axis (see the inline comments for more info):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xAxis = d3.svg.axis() <span class="comment">//Create an axis</span></span><br><span class="line">    .scale(x) <span class="comment">//scale the axis</span></span><br><span class="line">    .orient(<span class="string">"bottom"</span>); <span class="comment">//this is where the labels will be located</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> yAxis = d3.svg.axis()</span><br><span class="line">    .scale(y)</span><br><span class="line">    .orient(<span class="string">"left"</span>)</span><br><span class="line">    .tickFormat(d3.format(<span class="string">"d"</span>)) <span class="comment">//Ticks are the divisions on the scale. </span></span><br><span class="line">    .tickSubdivide(<span class="number">0</span>); <span class="comment">//Here we want to see only whole numbers on the axis</span></span><br><span class="line"></span><br><span class="line">svg.append(<span class="string">"g"</span>)</span><br><span class="line">    .attr(<span class="string">"class"</span>, <span class="string">"y axis"</span>)</span><br><span class="line">    .call(yAxis);</span><br><span class="line"></span><br><span class="line">svg.append(<span class="string">"g"</span>)</span><br><span class="line">    .attr(<span class="string">"class"</span>, <span class="string">"y axis"</span>)</span><br><span class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate(0,"</span> + height + <span class="string">")"</span>)</span><br><span class="line">    .call(xAxis)</span><br><span class="line">    .selectAll(<span class="string">"text"</span>) <span class="comment">//In some cases the labels will overlap</span></span><br><span class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"rotate(90)"</span>) <span class="comment">//so you might for example want to rotate the label's so they are vertical</span></span><br><span class="line">    .attr(<span class="string">"x"</span>, <span class="number">0</span>) <span class="comment">//After that you might have to do some finetuning to align everything the right way:</span></span><br><span class="line">    .attr(<span class="string">"y"</span>, <span class="number">-6</span>)</span><br><span class="line">    .attr(<span class="string">"dx"</span>, <span class="string">".6em"</span>)</span><br><span class="line">    .style(<span class="string">"text-anchor"</span>, <span class="string">"start"</span>);</span><br></pre></td></tr></table></figure>And now we have a full chart (I also added some CSS styling):<br><a class="jsbin-embed" href="http://jsbin.com/kixaqa/6/embed?html,output" target="_blank" rel="external">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script><br>Or as an extra example, the same data in a bar chart with <a href="http://jsbin.com/parase/1/edit?html,output" target="_blank" rel="external">horizontal bars</a>. I wanted to share this example as well, because it turned out to be a bit more complex then I expected. Comparing them is a good way to see if you understand D3.js</p>
+<h3 id="How-to-make-a-line-chart"><a href="#How-to-make-a-line-chart" class="headerlink" title="How to make a line chart"></a>How to make a line chart</h3><p>Another very common chart is the line chart. I build on top of what we learned with the bar chart, so I assume you understand the scaling:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">id</span>=<span class="string">"lineChart"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">    .line &#123;</span><br><span class="line">      fill: none;</span><br><span class="line">      stroke: steelblue;</span><br><span class="line">      stroke-width: 2px;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> data = [<span class="number">50</span>,<span class="number">90</span>,<span class="number">30</span>,<span class="number">10</span>,<span class="number">70</span>,<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> width = <span class="number">500</span>;</span><br><span class="line">  <span class="keyword">var</span> height = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> svg = d3.select(<span class="string">"#lineChart"</span>)</span><br><span class="line">              .attr(<span class="string">"width"</span>, width)</span><br><span class="line">              .attr(<span class="string">"height"</span>, height);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> x = d3.scale.linear()</span><br><span class="line">  .range([<span class="number">0</span>, width]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> y = d3.scale.linear()</span><br><span class="line">  .range([height, <span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">  x.domain([<span class="number">0</span>, data.length]);</span><br><span class="line">  y.domain([<span class="number">0</span>, d3.max(data, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;)]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> line = d3.svg.line()</span><br><span class="line">            .x(<span class="function"><span class="keyword">function</span> (<span class="params">d, i</span>) </span>&#123; <span class="keyword">return</span> x(i); &#125;)</span><br><span class="line">            .y(<span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> y(d); &#125;);</span><br><span class="line"></span><br><span class="line">        svg.append(<span class="string">"path"</span>)</span><br><span class="line">            .datum(data)</span><br><span class="line">            .attr(<span class="string">"class"</span>, <span class="string">"line"</span>)</span><br><span class="line">            .attr(<span class="string">"d"</span>, line);</span><br><span class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>This results in this line chart:<br><a class="jsbin-embed" href="http://jsbin.com/zezumeg/8/embed?html,output" target="_blank" rel="external">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script><br>Very basic, but a line chart. Some things of note for the chart example:</p>
+<ul>
+<li>The scales are both linear</li>
+<li>The domains are set to size of the array and to the max value in the array</li>
+<li>The line is drawn by plotting the index of the array against the value in the array</li>
+<li>Then we add the line to the svg, as a path</li>
+<li>If you do not add any style for the line, it will look a bit strange, because it will fill the object by default (just try it out to see, remove the style block in the JSBin example), so normally you will add a style.</li>
+<li>Of course you can also add axis to this if you want, in the same way as with the bar chart.</li>
+</ul>
+<p>Now the only thing left is styling your charts to make them look great! </p>
+<h3 id="Get-data-via-an-JSON-call-ASP-NET-MVC"><a href="#Get-data-via-an-JSON-call-ASP-NET-MVC" class="headerlink" title="Get data via an JSON call (ASP.NET MVC)"></a>Get data via an JSON call (ASP.NET MVC)</h3><p>Mmost of the time the information for the chart comes from a database on the server. Although you could generate the javascript to create the data array, a cleaner solution is to make an JSON call to fetch the data. D3.js includes a perfect function to do this:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">d3.json(<span class="string">"MyController/MyAction"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//Here you have data available, an object with the same structure </span></span><br><span class="line">    <span class="comment">//as the JSON that was send by the server.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>In ASP.NET Core 1.0 the function that will be called should look like this:<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">MyAction</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Json( <span class="keyword">new</span>[] &#123;</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Shoes"</span> , Count = <span class="number">5</span> &#125;,</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Shirts"</span> , Count = <span class="number">9</span> &#125;,</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Pants"</span> , Count = <span class="number">3</span> &#125;,</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Ties"</span> , Count = <span class="number">1</span> &#125;,</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Socks"</span> , Count = <span class="number">7</span> &#125;,</span><br><span class="line">        <span class="keyword">new</span> &#123; Product = <span class="string">"Jackets"</span> , Count = <span class="number">2</span> &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>And with that you have a complete chart with data from the server. If you need an “almost no development skills”, or a more indepth tutorial for D3.js you can also look <a href="http://alignedleft.com/tutorials/d3" target="_blank" rel="external">here</a>. Let me know if you have any questions. Happy charting! </p>
+<style type="text/css">.article-entry li{ margin-left: 2.2em; list-style-position: outside; }</style>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/" data-id="cion4tp4700003objfcldltje" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="http://www.twitter.com/eriksteinebach" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/eriksteinebach" target="_blank">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="http://www.facebook.com/eriksteinebach" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/eriksteinebach" target="_blank">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/eriksteinebach" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/rss2.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/05/17/how-to-deal-with-time/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">How to deal with time (in .NET and on Azure)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                <div class="widget-wrap widget-float">
+	<h3 class="widget-title">About</h3>
+	<div class="widget about">
+		I am a traveler, a .NET developer, an architect and a new technology enthusiast. Originally from The Netherlands, I am currently working as a freelancers based in Lima, Peru.
+	</div>
+</div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/chart.JPG)" alt="Creating charts with d3.js and ASP.NET MVC" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Coding/">Coding</a></p>
+                            <p class="item-title"><a href="/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/" class="title">Creating charts with d3.js and ASP.NET MVC</a></p>
+                            <p class="item-date"><time datetime="2016-05-25T13:24:47.000Z" itemprop="datePublished">2016-05-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/17/how-to-deal-with-time/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2016/05/17/how-to-deal-with-time/clock-407101_1280.jpg)" alt="How to deal with time (in .NET and on Azure)" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Coding/">Coding</a></p>
+                            <p class="item-title"><a href="/2016/05/17/how-to-deal-with-time/" class="title">How to deal with time (in .NET and on Azure)</a></p>
+                            <p class="item-date"><time datetime="2016-05-17T21:28:43.000Z" itemprop="datePublished">2016-05-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/blog-reboot-and-changes/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2016/05/14/blog-reboot-and-changes/change-1245949_640.jpg)" alt="Blog reboot and changes" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/05/14/blog-reboot-and-changes/" class="title">Blog reboot and changes</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T00:36:00.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/community-150124_640.png)" alt="The difference between implementing DevOps in small and big teams" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DevOps/">DevOps</a></p>
+                            <p class="item-title"><a href="/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/" class="title">The difference between implementing DevOps in small and big teams</a></p>
+                            <p class="item-date"><time datetime="2014-11-23T18:50:30.000Z" itemprop="datePublished">2014-11-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/factory-35104_640.png)" alt="Introducing Continuous Delivery and DevOps in a company" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DevOps/">DevOps</a></p>
+                            <p class="item-title"><a href="/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/" class="title">Introducing Continuous Delivery and DevOps in a company</a></p>
+                            <p class="item-date"><time datetime="2014-08-23T18:49:17.000Z" itemprop="datePublished">2014-08-23</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/ASP-NET/" style="font-size: 10px;">ASP.NET</a> <a href="/tags/Azure/" style="font-size: 10px;">Azure</a> <a href="/tags/Backpacking/" style="font-size: 10px;">Backpacking</a> <a href="/tags/Barchart/" style="font-size: 10px;">Barchart</a> <a href="/tags/Charts/" style="font-size: 10px;">Charts</a> <a href="/tags/Continuous-Delivery/" style="font-size: 20px;">Continuous Delivery</a> <a href="/tags/D3-js/" style="font-size: 10px;">D3.js</a> <a href="/tags/DateTime/" style="font-size: 10px;">DateTime</a> <a href="/tags/DevOps/" style="font-size: 20px;">DevOps</a> <a href="/tags/Graphs/" style="font-size: 10px;">Graphs</a> <a href="/tags/Housekeeping/" style="font-size: 10px;">Housekeeping</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linechart/" style="font-size: 10px;">Linechart</a> <a href="/tags/Response/" style="font-size: 10px;">Response</a> <a href="/tags/Time/" style="font-size: 10px;">Time</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevOps/">DevOps</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Erik Steinebach</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'eriksteinebachcom';
+    
+    
+    var disqus_url = 'http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
