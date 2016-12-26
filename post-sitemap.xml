@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/</loc>
+        <lastmod>2016-12-26T14:58:53.794Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/2016/07/29/issues-continuous-deploying-a-aspnetcore-1-angularjs-2-app-into-azure/</loc>
         <lastmod>2016-07-29T21:50:05.980Z</lastmod>
         <changefreq>weekly</changefreq>
