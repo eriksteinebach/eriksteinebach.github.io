@@ -135,7 +135,7 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/Application-Insights/</loc>
+        <loc>http://eriksteinebach.com/tags/NET/</loc>
         <lastmod>2016-12-26T14:58:53.794Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -149,14 +149,14 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/Tracking-and-tracing/</loc>
+        <loc>http://eriksteinebach.com/tags/Application-Insights/</loc>
         <lastmod>2016-12-26T14:58:53.794Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/NET/</loc>
+        <loc>http://eriksteinebach.com/tags/Tracking-and-tracing/</loc>
         <lastmod>2016-12-26T14:58:53.794Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
