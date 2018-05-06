@@ -121,50 +121,64 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/tags/NET-Core/</loc>
+        <lastmod>2018-05-06T17:44:45.988Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/netcore/</loc>
+        <lastmod>2018-05-06T17:44:45.988Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/tags/Application-Insights/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/Azure/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/Tracking-and-tracing/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/ASP-NET/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/Javascript/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/NET/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/User-tracking/</loc>
-        <lastmod>2016-12-26T14:58:53.795Z</lastmod>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
