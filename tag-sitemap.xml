@@ -135,6 +135,20 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/tags/Javascript/</loc>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/ASP-NET/</loc>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/tags/Application-Insights/</loc>
         <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -150,20 +164,6 @@
 
     <url>
         <loc>http://eriksteinebach.com/tags/Tracking-and-tracing/</loc>
-        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/ASP-NET/</loc>
-        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/Javascript/</loc>
         <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
