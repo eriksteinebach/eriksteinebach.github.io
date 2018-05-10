@@ -31,7 +31,7 @@
 		beforeLoad: function (opts, obj) {
 			//Remove self if gallery do not have at least two items
 
-			if (opts.skipSingle && obj.group.length < 2) {
+			if (opts.skipSingle && obj.group.length <2) {
 				obj.helpers.buttons = false;
 				obj.closeBtn = true;
 
@@ -70,14 +70,14 @@
 			}
 
 			//Prev
-			if (obj.index > 0 || obj.loop) {
+			if (obj.index> 0 || obj.loop) {
 				buttons.prev.removeClass('btnDisabled');
 			} else {
 				buttons.prev.addClass('btnDisabled');
 			}
 
 			//Next / Play
-			if (obj.loop || obj.index < obj.group.length - 1) {
+			if (obj.loop || obj.index <obj.group.length - 1) {
 				buttons.next.removeClass('btnDisabled');
 				buttons.play.removeClass('btnDisabled');
 

@@ -45,7 +45,7 @@
 				var o = data.obj, tag = data.tag, url = data.url, post, posb;
 				if (o) {
 					post = o.offset().top - contop, posb = post + o.height();
-					if ((post >= 0 && post < contHeight) || (posb > 0 && posb <= contHeight)) {
+					if ((post>= 0 && post <contHeight) || (posb> 0 && posb <= contHeight)) {
 						if (url) {
 							//在浏览器窗口内
 							if (tag === "img") {

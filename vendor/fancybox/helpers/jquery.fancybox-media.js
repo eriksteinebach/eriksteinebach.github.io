@@ -79,7 +79,7 @@
 			});
 
 			if (params.length) {
-				url += ( url.indexOf('?') > 0 ? '&' : '?' ) + params;
+				url += ( url.indexOf('?')> 0 ? '&' : '?' ) + params;
 			}
 
 			return url;
@@ -158,7 +158,7 @@
 				matcher : /maps\.google\.([a-z]{2,3}(\.[a-z]{2})?)\/(\?ll=|maps\?)(.*)/i,
 				type : 'iframe',
 				url  : function( rez ) {
-					return '//maps.google.' + rez[1] + '/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c') > 0 ? 'svembed' : 'embed');
+					return '//maps.google.' + rez[1] + '/' + rez[3] + '' + rez[4] + '&output=' + (rez[4].indexOf('layer=c')> 0 ? 'svembed' : 'embed');
 				}
 			}
 		},

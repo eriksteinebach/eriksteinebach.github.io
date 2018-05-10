@@ -30,10 +30,10 @@
 			return str && $.type(str) === "string";
 		},
 		isPercentage = function(str) {
-			return isString(str) && str.indexOf('%') > 0;
+			return isString(str) && str.indexOf('%')> 0;
 		},
 		isScrollable = function(el) {
-			return (el && !(el.style.overflow && el.style.overflow === 'hidden') && ((el.clientWidth && el.scrollWidth > el.clientWidth) || (el.clientHeight && el.scrollHeight > el.clientHeight)));
+			return (el && !(el.style.overflow && el.style.overflow === 'hidden') && ((el.clientWidth && el.scrollWidth> el.clientWidth) || (el.clientHeight && el.scrollHeight> el.clientHeight)));
 		},
 		getScalar = function(orig, dim) {
 			var value = parseInt(orig, 10) || 0;
@@ -451,7 +451,7 @@
 					F.trigger('onPlayEnd');
 				},
 				start = function () {
-					if (F.current && (F.current.loop || F.current.index < F.group.length - 1)) {
+					if (F.current && (F.current.loop || F.current.index <F.group.length - 1)) {
 						F.player.isActive = true;
 
 						D.bind({
@@ -509,11 +509,11 @@
 
 			index = getScalar(index);
 
-			F.direction = direction || current.direction[ (index >= current.index ? 'next' : 'prev') ];
+			F.direction = direction || current.direction[ (index>= current.index ? 'next' : 'prev') ];
 			F.router    = router || 'jumpto';
 
 			if (current.loop) {
-				if (index < 0) {
+				if (index <0) {
 					index = current.group.length + (index % current.group.length);
 				}
 
@@ -695,14 +695,14 @@
 					// Ignore key combinations and key events within form elements
 					if (!e.ctrlKey && !e.altKey && !e.shiftKey && !e.metaKey && !(target && (target.type || $(target).is('[contenteditable]')))) {
 						$.each(keys, function(i, val) {
-							if (current.group.length > 1 && val[ code ] !== undefined) {
+							if (current.group.length> 1 && val[ code ] !== undefined) {
 								F[ i ]( val[ code ] );
 
 								e.preventDefault();
 								return false;
 							}
 
-							if ($.inArray(code, val) > -1) {
+							if ($.inArray(code, val)> -1) {
 								F[ i ] ();
 
 								e.preventDefault();
@@ -729,12 +729,12 @@
 					}
 
 					if (delta !== 0 && !canScroll) {
-						if (F.group.length > 1 && !current.canShrink) {
-							if (deltaY > 0 || deltaX > 0) {
-								F.prev( deltaY > 0 ? 'down' : 'left' );
+						if (F.group.length> 1 && !current.canShrink) {
+							if (deltaY> 0 || deltaX> 0) {
+								F.prev( deltaY> 0 ? 'down' : 'left' );
 
-							} else if (deltaY < 0 || deltaX < 0) {
-								F.next( deltaY < 0 ? 'up' : 'right' );
+							} else if (deltaY <0 || deltaX <0) {
+								F.next( deltaY <0 ? 'up' : 'right' );
 							}
 
 							e.preventDefault();
@@ -1286,22 +1286,22 @@
 			maxHeight_ = viewport.h - hMargin;
 
 			if (current.aspectRatio) {
-				if (width > maxWidth) {
+				if (width> maxWidth) {
 					width  = maxWidth;
 					height = getScalar(width / ratio);
 				}
 
-				if (height > maxHeight) {
+				if (height> maxHeight) {
 					height = maxHeight;
 					width  = getScalar(height * ratio);
 				}
 
-				if (width < minWidth) {
+				if (width <minWidth) {
 					width  = minWidth;
 					height = getScalar(width / ratio);
 				}
 
-				if (height < minHeight) {
+				if (height <minHeight) {
 					height = minHeight;
 					width  = getScalar(height * ratio);
 				}
@@ -1329,20 +1329,20 @@
 				height_ = wrap.height();
 
 				if (current.aspectRatio) {
-					while ((width_ > maxWidth_ || height_ > maxHeight_) && width > minWidth && height > minHeight) {
-						if (steps++ > 19) {
+					while ((width_> maxWidth_ || height_> maxHeight_) && width> minWidth && height> minHeight) {
+						if (steps++> 19) {
 							break;
 						}
 
 						height = Math.max(minHeight, Math.min(maxHeight, height - 10));
 						width  = getScalar(height * ratio);
 
-						if (width < minWidth) {
+						if (width <minWidth) {
 							width  = minWidth;
 							height = getScalar(width / ratio);
 						}
 
-						if (width > maxWidth) {
+						if (width> maxWidth) {
 							width  = maxWidth;
 							height = getScalar(width / ratio);
 						}
@@ -1361,7 +1361,7 @@
 				}
 			}
 
-			if (scrollOut && scrolling === 'auto' && height < origHeight && (width + wPadding + scrollOut) < maxWidth_) {
+			if (scrollOut && scrolling === 'auto' && height <origHeight && (width + wPadding + scrollOut) <maxWidth_) {
 				width += scrollOut;
 			}
 
@@ -1372,8 +1372,8 @@
 			width_  = wrap.width();
 			height_ = wrap.height();
 
-			canShrink = (width_ > maxWidth_ || height_ > maxHeight_) && width > minWidth && height > minHeight;
-			canExpand = current.aspectRatio ? (width < origMaxWidth && height < origMaxHeight && width < origWidth && height < origHeight) : ((width < origMaxWidth || height < origMaxHeight) && (width < origWidth || height < origHeight));
+			canShrink = (width_> maxWidth_ || height_> maxHeight_) && width> minWidth && height> minHeight;
+			canExpand = current.aspectRatio ? (width <origMaxWidth && height <origMaxHeight && width <origWidth && height <origHeight) : ((width <origMaxWidth || height <origMaxHeight) && (width <origWidth || height <origHeight));
 
 			$.extend(current, {
 				dim : {
@@ -1390,7 +1390,7 @@
 				skinSpace  : skin.height() - height
 			});
 
-			if (!iframe && current.autoHeight && height > minHeight && height < maxHeight && !canExpand) {
+			if (!iframe && current.autoHeight && height> minHeight && height <maxHeight && !canExpand) {
 				inner.height('auto');
 			}
 		},
@@ -1435,7 +1435,7 @@
 			F.update();
 
 			// Assign a click event
-			if ( current.closeClick || (current.nextClick && F.group.length > 1) ) {
+			if ( current.closeClick || (current.nextClick && F.group.length> 1) ) {
 				F.inner.css('cursor', 'pointer').bind('click.fb', function(e) {
 					if (!$(e.target).is('a') && !$(e.target).parent().is('a')) {
 						e.preventDefault();
@@ -1455,12 +1455,12 @@
 			}
 
 			// Create navigation arrows
-			if (current.arrows && F.group.length > 1) {
-				if (current.loop || current.index > 0) {
+			if (current.arrows && F.group.length> 1) {
+				if (current.loop || current.index> 0) {
 					$(current.tpl.prev).appendTo(F.outer).bind('click.fb', F.prev);
 				}
 
-				if (current.loop || current.index < F.group.length - 1) {
+				if (current.loop || current.index <F.group.length - 1) {
 					$(current.tpl.next).appendTo(F.outer).bind('click.fb', F.next);
 				}
 			}
@@ -1794,11 +1794,11 @@
 			if (IE) {
 				offsetWidth = Math.max(document.documentElement.offsetWidth, document.body.offsetWidth);
 
-				if (D.width() > offsetWidth) {
+				if (D.width()> offsetWidth) {
 					width = D.width();
 				}
 
-			} else if (D.width() > W.width()) {
+			} else if (D.width()> W.width()) {
 				width = D.width();
 			}
 

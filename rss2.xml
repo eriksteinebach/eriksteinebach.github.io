@@ -8,8 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>I am a digital nomad, a .NET developer, a software architect, a development process consultant and a new technology enthusiast. Originally from The Netherlands, but currently living in Lima, Peru.</description>
-    <pubDate>Sun, 06 May 2018 17:44:45 GMT</pubDate>
+    <pubDate>Thu, 10 May 2018 23:48:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Azure Event Grid vs Azure Service Bus</title>
+      <link>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/</link>
+      <guid>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/</guid>
+      <pubDate>Thu, 10 May 2018 22:56:16 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;When I started looking into solutions for routing events to our new microservice, it took me a while to get a clear picture of the differ
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>When I started looking into solutions for routing events to our new microservice, it took me a while to get a clear picture of the differences between Azure Event Grid and Azure Service Bus. In this blogpost I want to share my findings and try to show what the differences are. Hopefully this will help you find the best solution for your problem, because these are not a one or the other products. Both Event Grid and Service Bus have different characteristics, and both can be a valid solution for your problem.</p><h3 id="Azure-Event-Grid"><a href="#Azure-Event-Grid" class="headerlink" title="Azure Event Grid"></a>Azure Event Grid</h3><ul><li>Event Grid is more like a router for events<ul><li>Push based model, based on HTTP calls (both ingoing and outgoing)</li><li>Event Grid has an available endpoint where you can send events (http post). When receiving events, EventGrid will route them to subscribers, based on the configuration made in Event Grid (This can be done through the portal or with a management API) </li><li>With pay on use solutions (with for example Azure functions) you don’t pay anything when there is no traffic. Not for Event Grid or for your receiving and sending application, because there are no polling threads that need to be active)<br><br></li></ul></li><li>Retry mechanism <ul><li>Retries at 10, 30 seconds, 1, 5, 10, 30 minutes, 1 hour, every hour up till 24 hours, with small randomization of those times<br><br></li></ul></li><li>Filtering <ul><li>Can be done by EventType and Subject (custom string per event) </li><li>For Subject only filtering on StartsWith and EndsWith are available (nothing more complex)<br><br>    </li></ul></li><li>Not transactional (because of retries you have a reasonable guarantee of at least once delivery)<br><br></li><li>Doesn’t have a local emulator, so local testing is tricky <h3 id="Azure-Service-Bus"><a href="#Azure-Service-Bus" class="headerlink" title="Azure Service Bus"></a>Azure Service Bus</h3></li><li>Service Bus is a queue-based system<ul><li>Pull based, receiving needs to pull a queue (ingoing is writing to queue, outgoing is pull from queue)</li><li>The application writes an event to a queue, the receiving system monitors this queue. With Azure Functions/WebJob polling the queue is fully abstracted, but there will always be an active thread<br><br>  </li></ul></li><li>Retry mechanism <ul><li>Can be customized by reader, but both writing, and reading could be done 100% transactional</li><li>Azure functions/webjob triggers offer an out of the box solution for this<br><br></li></ul></li><li>Filering<ul><li>Much more customization possibilities compared to Event Grid. SQL style language to write filters for topics<br><br>  </li></ul></li><li>100% transactional (in and out)<br><br>  </li><li>Service Bus also doesn’t have a good local emulator, but I could imagine using an azure queue as an alternative should be possible. I didn’t test this or do much research on this though</li></ul><p>For my project Event Grid was the system we were looking for. We are building a notification system, where 100% accurate delivery is not required. The cost savings and ease of development were the deciding factors for us to go with Event Grid. We almost switched to Service Bus when we figured out that there was no local emulator, because this is quite limiting during development, but because Service Bus has the same problem, we went with Event Bus anyway. </p><p>I hope this comparison will help you pick the correct eventing solution for you.</p>]]></content:encoded>
+      
+      <comments>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Follow a specific user in Application Insights .NET Core edition</title>

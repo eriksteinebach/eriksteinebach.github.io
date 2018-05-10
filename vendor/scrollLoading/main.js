@@ -17,7 +17,7 @@
 
   var isLoaded = function () {
     $('.scrollLoading').each(function (i, img) {
-      if($(this).height() > 0 && $(this).parents('.scrollLoading-wrap').length) {
+      if($(this).height()> 0 && $(this).parents('.scrollLoading-wrap').length) {
         if($(this).parent().hasClass('scrollLoading-wrap'))
           $(this).unwrap();
         else

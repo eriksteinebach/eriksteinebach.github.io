@@ -85,10 +85,10 @@
             var containFields = fields.filter(function (field) {
                 if (!obj.hasOwnProperty(field))
                     return false;
-                if (obj[field].toUpperCase().indexOf(keyword) > -1)
+                if (obj[field].toUpperCase().indexOf(keyword)> -1)
                     return true;
             });
-            if (containFields.length > 0)
+            if (containFields.length> 0)
                 return true;
             return false;
         });
@@ -176,10 +176,10 @@
         var wrapperHeight = $wrapper[0].clientHeight;
         var itemTop = $item.position().top - $wrapper.scrollTop();
         var itemBottom = $item[0].clientHeight + $item.position().top;
-        if (itemBottom > wrapperHeight + $wrapper.scrollTop()) {
+        if (itemBottom> wrapperHeight + $wrapper.scrollTop()) {
             $wrapper.scrollTop(itemBottom - $wrapper[0].clientHeight);
         }
-        if (itemTop < 0) {
+        if (itemTop <0) {
             $wrapper.scrollTop($item.position().top);
         }
     }

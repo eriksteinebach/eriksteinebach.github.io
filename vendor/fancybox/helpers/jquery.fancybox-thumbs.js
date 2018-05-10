@@ -53,7 +53,7 @@
 			//Build list structure
 			list = '';
 
-			for (var n = 0; n < obj.group.length; n++) {
+			for (var n = 0; n <obj.group.length; n++) {
 				list += '<li><a style="width:' + thumbWidth + 'px;height:' + thumbHeight + 'px;" href="javascript:jQuery.fancybox.jumpto(' + n + ');"></a></li>';
 			}
 
@@ -84,8 +84,8 @@
 
 					parent = that.list.children().eq(i).find('a');
 
-					if (widthRatio >= 1 && heightRatio >= 1) {
-						if (widthRatio > heightRatio) {
+					if (widthRatio>= 1 && heightRatio>= 1) {
+						if (widthRatio> heightRatio) {
 							width  = Math.floor(width / heightRatio);
 							height = thumbHeight;
 
@@ -119,7 +119,7 @@
 
 		beforeLoad: function (opts, obj) {
 			//Remove self if gallery do not have at least two items
-			if (obj.group.length < 2) {
+			if (obj.group.length <2) {
 				obj.helpers.thumbs = false;
 
 				return;

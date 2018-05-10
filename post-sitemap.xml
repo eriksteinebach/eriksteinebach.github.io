@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/</loc>
+        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/</loc>
         <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
