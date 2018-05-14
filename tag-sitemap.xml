@@ -135,20 +135,6 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/Javascript/</loc>
-        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/ASP-NET/</loc>
-        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://eriksteinebach.com/tags/Application-Insights/</loc>
         <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -163,15 +149,22 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/User-tracking/</loc>
+        <loc>http://eriksteinebach.com/tags/ASP-NET/</loc>
         <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/Event-Grid/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <loc>http://eriksteinebach.com/tags/Javascript/</loc>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/User-tracking/</loc>
+        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -184,36 +177,57 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/tags/Architecture/</loc>
+        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/tags/Azure/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/Eventing/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/Microservices/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://eriksteinebach.com/tags/NET/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/Architecture/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <loc>http://eriksteinebach.com/tags/Event-Grid/</loc>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/Eventing/</loc>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/Microservices/</loc>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/HTTP/</loc>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/Client/</loc>
+        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
