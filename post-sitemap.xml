@@ -7,16 +7,8 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/2018/05/14/generic-client-for-sending-events-to-eventgrid/</loc>
-        <lastmod>2018-05-14T13:47:24.336Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/</loc>
-        <lastmod>2018-05-10T23:48:56.037Z</lastmod>
+        <lastmod>2018-05-17T23:57:39.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,55 +16,7 @@
 
     <url>
         <loc>http://eriksteinebach.com/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/</loc>
-        <lastmod>2018-05-06T17:45:33.756Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2018/05/06/specific-user-application-insights-netcore/</loc>
-        <lastmod>2018-05-06T17:44:45.988Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2016/07/29/issues-continuous-deploying-a-aspnetcore-1-angularjs-2-app-into-azure/</loc>
-        <lastmod>2016-07-29T21:50:05.981Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/</loc>
-        <lastmod>2016-05-25T17:15:04.303Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2016/05/17/how-to-deal-with-time/</loc>
-        <lastmod>2016-05-25T17:00:47.916Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2016/05/14/blog-reboot-and-changes/</loc>
-        <lastmod>2016-05-15T18:59:25.174Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</loc>
-        <lastmod>2016-05-14T20:10:15.751Z</lastmod>
+        <lastmod>2018-05-17T23:57:37.418Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,7 +24,31 @@
 
     <url>
         <loc>http://eriksteinebach.com/2014/11/23/the-difference-between-implementing-devops-in-small-and-big-teams/</loc>
-        <lastmod>2016-05-14T20:07:05.327Z</lastmod>
+        <lastmod>2018-05-17T23:57:35.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2018/05/06/specific-user-application-insights-netcore/</loc>
+        <lastmod>2018-05-17T23:57:02.422Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2016/07/29/issues-continuous-deploying-a-aspnetcore-1-angularjs-2-app-into-azure/</loc>
+        <lastmod>2018-05-17T23:56:43.573Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2014/08/23/introducing-continuous-delivery-and-devops-in-a-company/</loc>
+        <lastmod>2018-05-17T23:56:20.775Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -88,7 +56,39 @@
 
     <url>
         <loc>http://eriksteinebach.com/2014/08/06/how-to-explain-continuous-delivery-to-backpackers/</loc>
-        <lastmod>2016-05-14T19:55:13.762Z</lastmod>
+        <lastmod>2018-05-17T23:56:12.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2016/05/17/how-to-deal-with-time/</loc>
+        <lastmod>2018-05-17T23:56:02.114Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2018/05/14/generic-client-for-sending-events-to-eventgrid/</loc>
+        <lastmod>2018-05-17T23:55:53.965Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2016/05/25/Creating-charts-with-d3js-and-ASPNET-MVC/</loc>
+        <lastmod>2018-05-17T23:55:34.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/2016/05/14/blog-reboot-and-changes/</loc>
+        <lastmod>2018-05-17T23:55:17.527Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
