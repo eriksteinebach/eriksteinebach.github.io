@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/2018/05/14/generic-client-for-sending-events-to-eventgrid/</loc>
         <lastmod>2018-06-11T01:31:13.773Z</lastmod>
         <changefreq>weekly</changefreq>

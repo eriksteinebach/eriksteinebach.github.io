@@ -3,19 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/12 | NET, DevOps, Architecture, Azure, Erik Steinebach</title>
+    <title>Javascript script for Application Insights | NET, DevOps, Architecture, Azure, Erik Steinebach</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="I am a digital nomad, a .NET developer, a software architect, a development process consultant and a new technology enthusiast. Originally from The Netherlands, but currently living in Lima, Peru.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="NET, DevOps, Architecture, Azure, Erik Steinebach">
-<meta property="og:url" content="http://eriksteinebach.com/archives/2016/12/index.html">
+        <meta name="keywords" content="javascript,application insights,azure,tracking and tracing,.net,user tracking" />
+    
+    <meta name="description" content="There are a lot of scripts available on how to implement Application Insights on the server side. Also, for a lot of different ways to customize the client. But I had a hard time finding how to custom">
+<meta name="keywords" content="javascript,application insights,azure,tracking and tracing,.net,user tracking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript script for Application Insights">
+<meta property="og:url" content="http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/index.html">
 <meta property="og:site_name" content="NET, DevOps, Architecture, Azure, Erik Steinebach">
-<meta property="og:description" content="I am a digital nomad, a .NET developer, a software architect, a development process consultant and a new technology enthusiast. Originally from The Netherlands, but currently living in Lima, Peru.">
+<meta property="og:description" content="There are a lot of scripts available on how to implement Application Insights on the server side. Also, for a lot of different ways to customize the client. But I had a hard time finding how to custom">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/intro.png">
+<meta property="og:updated_time" content="2018-06-11T01:50:41.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NET, DevOps, Architecture, Azure, Erik Steinebach">
-<meta name="twitter:description" content="I am a digital nomad, a .NET developer, a software architect, a development process consultant and a new technology enthusiast. Originally from The Netherlands, but currently living in Lima, Peru.">
+<meta name="twitter:title" content="Javascript script for Application Insights">
+<meta name="twitter:description" content="There are a lot of scripts available on how to implement Application Insights on the server side. Also, for a lot of different ways to customize the client. But I had a hard time finding how to custom">
+<meta name="twitter:image" content="http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/intro.png">
     
 
     
@@ -51,7 +57,7 @@ ga('send', 'pageview');
     
 
     
-    <link rel="canonical" href="http://eriksteinebach.com/archives/2016/12/"/>
+    <link rel="canonical" href="http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/"/>
     
     <script type="application/ld+json">
   {
@@ -185,72 +191,118 @@ window.cookieconsent.initialise({
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/12
+    <a class="page-title-link" href="/categories/Coding/">Coding</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-application-insights-for-javascript-script" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/thumbnail.jpg)" alt="Follow a specific user with Application Insights by setting AuthenticatedUserId" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-url="http://eriksteinebach.com/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Coding/">Coding</a>
-            </p>
-            <p class="date"><time datetime="2016-12-26T14:32:08.000Z" itemprop="datePublished">2016-12-26</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/">Follow a specific user with Application Insights by setting AuthenticatedUserId</a>
+        Javascript script for Application Insights
         </h1>
     
 
-        <p class="article-excerpt">
-            In my latest project we embraced Application Insights as our logging and tracking platform. I am impressed by its capabilities and ease of use when hosting on Azure. It already has been very useful an
-        </p>
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/2018/06/10/application-insights-for-javascript-script/" class="article-date">
+    <time datetime="2018-06-11T01:33:40.000Z" itemprop="datePublished">2018-06-10</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/net/">.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/application-insights/">application insights</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/azure/">azure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tracking-and-tracing/">tracking and tracing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/user-tracking/">user tracking</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>There are a lot of scripts available on how to implement Application Insights on the server side. Also, for a lot of different ways to customize the client. But I had a hard time finding how to customize Application Insights on the client side. So below I include the script we use with some customizations you can use to log what you want to get out of appInsights.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> appInsights = <span class="built_in">window</span>.appInsights || <span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">r</span>(<span class="params">config</span>) </span>&#123; t[config] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">var</span> i = <span class="built_in">arguments</span>; t.queue.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; t[config].apply(t, i) &#125;) &#125; &#125;</span><br><span class="line">    <span class="keyword">var</span> t = &#123; config: config &#125;, u = <span class="built_in">document</span>, e = <span class="built_in">window</span>, o = <span class="string">'script'</span>, s = u.createElement(o), i, f; <span class="keyword">for</span> (s.src = config.url || <span class="string">'//az416426.vo.msecnd.net/scripts/a/ai.0.js'</span>, u.getElementsByTagName(o)[<span class="number">0</span>].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = [<span class="string">'Event'</span>, <span class="string">'Exception'</span>, <span class="string">'Metric'</span>, <span class="string">'PageView'</span>, <span class="string">'Trace'</span>, <span class="string">'Ajax'</span>]; i.length;) r(<span class="string">'track'</span> + i.pop()); <span class="keyword">return</span> r(<span class="string">'setAuthenticatedUserContext'</span>), r(<span class="string">'clearAuthenticatedUserContext'</span>), config.disableExceptionTracking || (i = <span class="string">'onerror'</span>, r(<span class="string">'_'</span> + i), f = e[i], e[i] = <span class="function"><span class="keyword">function</span> (<span class="params">config, r, u, e, o</span>) </span>&#123; <span class="keyword">var</span> s = f &amp;&amp; f(config, r, u, e, o); <span class="keyword">return</span> s !== !<span class="number">0</span> &amp;&amp; t[<span class="string">'_'</span> + i](config, r, u, e, o), s &#125;), t</span><br><span class="line">&#125;(&#123;</span><br><span class="line">    instrumentationKey: <span class="string">'@Model.AppInsightsInstrumentationKey'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">window</span>.appInsights = appInsights;</span><br><span class="line">appInsights.queue.push(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    @<span class="keyword">if</span> (!<span class="built_in">String</span>.IsNullOrWhiteSpace(User.Identity.Name))</span><br><span class="line">    &#123;</span><br><span class="line">        &lt;text&gt;</span><br><span class="line">        <span class="keyword">var</span> appInsightsUserName = <span class="string">'@User.Identity.Name.Replace("\\", "\\\\")'</span>;</span><br><span class="line">        appInsights.setAuthenticatedUserContext(appInsightsUserName.replace(<span class="regexp">/[,;=| ]+/g</span>, <span class="string">"_"</span>));</span><br><span class="line">        &lt;<span class="regexp">/text&gt;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    appInsights.context.addTelemetryInitializer(function (envelope) &#123;</span></span><br><span class="line"><span class="regexp">        if (envelope.name === Microsoft.ApplicationInsights.Telemetry.RemoteDependencyData.envelopeType &amp;&amp; envelope.data.baseData.target.indexOf("...") &gt; -1) &#123;</span></span><br><span class="line"><span class="regexp">            return false;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        if (envelope.name === Microsoft.ApplicationInsights.Telemetry.Exception.envelopeType &amp;&amp; envelope.data.baseData.message.contains("...")) &#123;</span></span><br><span class="line"><span class="regexp">            return false;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp">    appInsights.viewPath = '&lt;nameofview&gt;';</span></span><br><span class="line"><span class="regexp">    appInsights.browserWidth = window.innerWidth;</span></span><br><span class="line"><span class="regexp">    appInsights.browserHeight = window.innerHeight;</span></span><br><span class="line"><span class="regexp">    appInsights.context.application.ver = '@typeof(&lt;Assembly.ClassName&gt;).Assembly.GetName().Version.ToString()';</span></span><br><span class="line"><span class="regexp">    appInsights.context.application.build = '@typeof(&lt;Assembly.ClassName&gt;).Assembly.GetName().Version.ToString()';</span></span><br><span class="line"><span class="regexp">    appInsights.trackPageView(null, null, &#123; urlReferrer: document.referrer &#125;);</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure><br>The first bit is just the standard Application Insights javascript script. This you can find anywhere.</p>
+<p>Then we add our startup function to appInsights.queue.push. This way the startup function is called when application insights is fully loaded. </p>
+<p>Next, we set the user authentication context based on the current principal. You can find more on this in my blogpost <a href="/2016/12/26/Follow-a-specific-user-with-Application-Insights-by-setting-AuthenticatedUserId/">“Follow a specific user with Application Insights by setting AuthenticatedUserId”</a>.</p>
+<p>Next, we can add TelemetryInitializers, but we mostly use them to filter certain items. We have a javascript framework included in our app that we use to show popups or function tours to our users. We make calls to this system every request and I don’t have any need seeing these calls in our logs, so we filter those out. We also filter some exceptions that are caused by browser extensions.</p>
+<p>Finally, we set some values (which are pretty obvious I think) and we call trackPageView to log the page view with our values.</p>
+<p>This gives us lots of good information on what our users are doing and see all errors users experience with our javascript code.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/" data-id="cji9lqeu000096w9hqqd6qggy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -310,6 +362,19 @@ window.cookieconsent.initialise({
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/05/14/generic-client-for-sending-events-to-eventgrid/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Generic client for sending events to Event Grid</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -488,11 +553,13 @@ window.cookieconsent.initialise({
     var disqus_shortname = 'eriksteinebachcom';
     
     
+    var disqus_url = 'http://eriksteinebach.com/2018/06/10/application-insights-for-javascript-script/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

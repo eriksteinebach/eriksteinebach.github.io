@@ -135,35 +135,7 @@
     </url>
 
     <url>
-        <loc>http://eriksteinebach.com/tags/javascript/</loc>
-        <lastmod>2018-05-17T23:57:37.418Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://eriksteinebach.com/tags/asp-net/</loc>
-        <lastmod>2018-05-17T23:57:37.418Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/application-insights/</loc>
-        <lastmod>2018-05-17T23:57:37.418Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/tracking-and-tracing/</loc>
-        <lastmod>2018-05-17T23:57:37.418Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/user-tracking/</loc>
         <lastmod>2018-05-17T23:57:37.418Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -179,20 +151,6 @@
     <url>
         <loc>http://eriksteinebach.com/tags/architecture/</loc>
         <lastmod>2018-05-17T23:57:39.327Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/azure/</loc>
-        <lastmod>2018-06-11T01:31:13.773Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/tags/net/</loc>
-        <lastmod>2018-06-11T01:31:13.773Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -228,6 +186,48 @@
     <url>
         <loc>http://eriksteinebach.com/tags/client/</loc>
         <lastmod>2018-06-11T01:31:13.773Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/javascript/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/application-insights/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/azure/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/tracking-and-tracing/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/net/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://eriksteinebach.com/tags/user-tracking/</loc>
+        <lastmod>2018-06-11T01:50:41.885Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
