@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://eriksteinebach.com/2018/05/14/generic-client-for-sending-events-to-eventgrid/</loc>
+        <lastmod>2018-06-11T01:31:13.773Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://eriksteinebach.com/2018/05/10/azure-eventgrid-vs-azure-servicebus/</loc>
         <lastmod>2018-05-17T23:57:39.327Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,14 +73,6 @@
     <url>
         <loc>http://eriksteinebach.com/2016/05/17/how-to-deal-with-time/</loc>
         <lastmod>2018-05-17T23:56:02.114Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://eriksteinebach.com/2018/05/14/generic-client-for-sending-events-to-eventgrid/</loc>
-        <lastmod>2018-05-17T23:55:53.965Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
